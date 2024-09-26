@@ -32,6 +32,9 @@ const config: Config = {
       screens: {
         "3xl": "1639px",
       },
+      boxShadow: {
+        soft: "0px 3px 6px #00000029",
+      },
     },
   },
   plugins: [],
