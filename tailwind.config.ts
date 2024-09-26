@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
   content: [
@@ -9,8 +10,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: {
+          100: "#0E6BFD",
+          200: "#004AC1",
+          300: "#0744A8",
+          400: "#0038AE",
+          500: "#013E9B",
+        },
+        secondary: {
+          400: "#FFD300",
+          500: "#D2AE00",
+        },
+        accent: {
+          400: "#E6406D",
+        },
+      },
+      fontFamily: {
+        sans: ["Open Sans", ...defaultTheme.fontFamily.sans],
       },
     },
   },
