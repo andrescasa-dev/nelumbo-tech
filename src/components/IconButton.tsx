@@ -2,17 +2,9 @@ import { cn } from "@/utils";
 import { cva, VariantProps } from "class-variance-authority";
 import React, { ReactNode } from "react";
 
-const iconButtonVariants = cva("", {
-  variants: {
-    variant: {
-      default:
-        "h-fit w-fit bg-background rounded-full text-neutral-500 p-3 hover:bg-gray-300",
-    },
-  },
-  defaultVariants: {
-    variant: "default",
-  },
-});
+const iconButtonVariants = cva(
+  "h-fit w-fit bg-background rounded-full text-neutral-500 p-3 hover:bg-gray-300 hover:text-neutral-600",
+);
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
@@ -20,17 +12,9 @@ export interface ButtonProps
   children: ReactNode;
 }
 
-function IconButton({
-  children,
-  variant,
-  className,
-  ...delegate
-}: ButtonProps) {
+function IconButton({ children, className, ...delegate }: ButtonProps) {
   return (
-    <button
-      className={cn(iconButtonVariants({ variant, className }))}
-      {...delegate}
-    >
+    <button className={cn(iconButtonVariants(), className)} {...delegate}>
       {children}
     </button>
   );

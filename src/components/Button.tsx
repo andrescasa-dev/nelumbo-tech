@@ -2,7 +2,7 @@ import { cn } from "@/utils";
 import { cva, VariantProps } from "class-variance-authority";
 import React, { ReactNode } from "react";
 
-const buttonVariants = cva("", {
+export const buttonVariants = cva("", {
   variants: {
     variant: {
       primary:
@@ -23,7 +23,7 @@ const buttonVariants = cva("", {
   },
 });
 
-export interface ButtonProps
+interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   children: ReactNode;

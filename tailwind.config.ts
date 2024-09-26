@@ -29,6 +29,9 @@ const config: Config = {
       fontFamily: {
         sans: ["Open Sans", ...defaultTheme.fontFamily.sans],
       },
+      screens: {
+        "3xl": "1639px",
+      },
     },
   },
   plugins: [],
