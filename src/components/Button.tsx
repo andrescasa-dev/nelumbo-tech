@@ -1,35 +1,47 @@
 import { cn } from "@/utils";
 import { cva, VariantProps } from "class-variance-authority";
-import React from "react";
+import React, { ReactNode } from "react";
 
-const button = cva("button", {
+const buttonVariants = cva("", {
   variants: {
-    intent: {
-      primary: ["bg-blue-500"],
-      secondary: ["bg-white"],
+    variant: {
+      primary:
+        "bg-secondary-400 text-primary-200 font-medium text-xl capitalize hover:bg-secondary-500",
+      ghost:
+        "text-secondary-400 font-medium text-xl capitalize hover:bg-primary-300",
+      Icon: "bg-background rounded-full",
     },
     size: {
-      small: ["text-sm", "py-1", "px-2"],
-      medium: ["text-base", "py-2", "px-4"],
+      big: ["px-[1.87em] py-[1.43em] rounded-lg"],
+      icon: ["p-1"],
     },
   },
-  compoundVariants: [{ intent: "primary", size: "medium", class: "uppercase" }],
+
   defaultVariants: {
-    intent: "primary",
-    size: "medium",
+    variant: "primary",
+    size: "big",
   },
 });
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof button> {
-  label: string;
+    VariantProps<typeof buttonVariants> {
+  children: ReactNode;
 }
 
-function Button({ label, intent, size, className, ...delegate }: ButtonProps) {
+function Button({
+  children,
+  variant,
+  size,
+  className,
+  ...delegate
+}: ButtonProps) {
   return (
-    <button className={cn(button({ intent, size, className }))} {...delegate}>
-      {label}
+    <button
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...delegate}
+    >
+      {children}
     </button>
   );
 }
