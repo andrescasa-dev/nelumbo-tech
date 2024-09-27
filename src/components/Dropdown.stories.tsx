@@ -19,7 +19,7 @@ export const Default: Story = {
     children: "Todas las Categorías",
     itemsClassName: "min-w-[174px] py-2.5 px-4",
     className:
-      "min-w-[194px] bg-[#7D879C] py-3 px-5 text-white text-sm data-[state=open]:bg-[#EBEFF4] data-[state=open]:text-[#4B566B]",
+      "min-w-[194px] bg-muted-400 py-3 px-5 text-white text-sm data-[state=open]:bg-[#EBEFF4] data-[state=open]:text-muted-500",
     items: [
       { label: "Todas", value: "todas" },
       { label: "Celulares", value: "mobiles" },

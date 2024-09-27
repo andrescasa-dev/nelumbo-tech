@@ -25,6 +25,15 @@ const config: Config = {
         accent: {
           400: "#E6406D",
         },
+        muted: {
+          300: "#D8E0E9",
+          400: "#7D879C",
+          500: "#4B566B",
+        },
+        foreground: {
+          400: "#2B3445",
+          500: "#080808",
+        },
       },
       fontFamily: {
         sans: ["Open Sans", ...defaultTheme.fontFamily.sans],

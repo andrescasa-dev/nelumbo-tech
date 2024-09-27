@@ -4,6 +4,9 @@ import SearchBar from "./SearchBar";
 
 const meta = {
   component: SearchBar,
+  parameters: {
+    layout: "centered",
+  },
 } satisfies Meta<typeof SearchBar>;
 
 export default meta;

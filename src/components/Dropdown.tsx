@@ -36,7 +36,7 @@ function Dropdown({
                 key={value}
                 value={value}
                 className={cn(
-                  "bg-white hover:bg-[#EBEFF4] text-[#7D879C]",
+                  "bg-white hover:bg-background text-muted-400",
                   itemsClassName,
                 )}
               >

@@ -6,6 +6,15 @@ const meta = {
   component: FilterAside,
   parameters: {
     layout: "centered",
+    backgrounds: {
+      default: "light-gray",
+      values: [
+        {
+          name: "light-gray",
+          value: "#EBEFF4",
+        },
+      ],
+    },
   },
 } satisfies Meta<typeof FilterAside>;
 

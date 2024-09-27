@@ -6,10 +6,10 @@ interface ScrollAreaProps extends PropsWithChildren {
   className?: string;
 }
 
-const scrollbarClasses = cn("flex select-none touch-none p-0.5 bg-[#D8E0E9]");
+const scrollbarClasses = cn("flex select-none touch-none p-0.5 bg-muted-300");
 
 const thumbClasses = cn(
-  "flex-1 bg-[#4B566B] rounded-[10px] relative",
+  "flex-1 bg-muted-500 rounded-[10px] relative",
   "before:content-[''] before:absolute before:top-1/2",
   "before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2",
   "before:w-full before:h-full before:min-w-[44px] before:min-h-[44px]",

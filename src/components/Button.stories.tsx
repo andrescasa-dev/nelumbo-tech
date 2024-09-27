@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Button from "./Button";
-import { ShoppingCart } from "lucide-react";
 
 const meta = {
   title: "primitives/Button",
@@ -16,7 +15,7 @@ const meta = {
     },
     size: {
       control: { type: "select" },
-      options: ["big"],
+      options: ["big", "small"],
     },
   },
 } satisfies Meta<typeof Button>;
@@ -40,10 +39,10 @@ export const Ghost: Story = {
   },
 };
 
-export const Icon: Story = {
+export const Small: Story = {
   args: {
-    children: <ShoppingCart className="size-4" />,
-    variant: "Icon",
-    size: "big",
+    children: "Lo Quiero",
+    variant: "primary",
+    size: "small",
   },
 };

@@ -7,6 +7,15 @@ const meta = {
   title: "primitives/IconButton",
   parameters: {
     layout: "centered",
+    backgrounds: {
+      default: "light-gray",
+      values: [
+        {
+          name: "light-gray",
+          value: "#EBEFF4",
+        },
+      ],
+    },
   },
   component: IconButton,
 } satisfies Meta<typeof IconButton>;

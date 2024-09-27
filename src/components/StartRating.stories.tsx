@@ -4,6 +4,9 @@ import StartRating from "./StartRating";
 
 const meta = {
   title: "primitives/StartRating",
+  parameters: {
+    layout: "centered",
+  },
   component: StartRating,
 } satisfies Meta<typeof StartRating>;
 

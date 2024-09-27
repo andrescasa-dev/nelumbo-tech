@@ -22,7 +22,7 @@ const brands = [
 function FilterAside() {
   const componentAccId = useId();
   return (
-    <aside className="w-[21.938rem] shadow-soft flex flex-col gap-5 py-6">
+    <aside className="w-[21.938rem] shadow-soft flex flex-col gap-5 py-6 bg-white">
       {/* brands */}
       <section className="px-6">
         <h3 className="mb-2 text-primary-500 font-bold">Marcas</h3>
