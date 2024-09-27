@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import StartRating from "./StartRating";
 
 const meta = {
+  title: "primitives/StartRating",
   component: StartRating,
 } satisfies Meta<typeof StartRating>;
 

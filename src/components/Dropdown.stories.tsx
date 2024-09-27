@@ -4,7 +4,7 @@ import Dropdown from "./Dropdown";
 
 const meta = {
   component: Dropdown,
-  title: "Primitives/dropdown",
+  title: "Primitives/Dropdown",
   parameters: {
     layout: "centered",
   },

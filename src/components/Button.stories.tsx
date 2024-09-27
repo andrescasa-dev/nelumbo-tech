@@ -3,7 +3,7 @@ import Button from "./Button";
 import { ShoppingCart } from "lucide-react";
 
 const meta = {
-  title: "components/Button",
+  title: "primitives/Button",
   component: Button,
   parameters: {
     layout: "centered",

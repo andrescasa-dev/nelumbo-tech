@@ -4,6 +4,7 @@ import IconButton from "./IconButton";
 import { ShoppingCart } from "lucide-react";
 
 const meta = {
+  title: "primitives/IconButton",
   parameters: {
     layout: "centered",
   },
