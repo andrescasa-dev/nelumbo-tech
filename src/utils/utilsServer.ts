@@ -16,13 +16,13 @@ export const paramsToUrlParams = (searchParamObj: SearchParamsProps) => {
 import { products } from "@/data"; // assuming you import products from somewhere
 
 export const fetchSimulation = async (endPoint: string) => {
-  console.log("endPoint", endPoint);
-  const url = new URL(`${process.env.BAKEND_URL}${endPoint}`);
-  console.log("url", url);
-  console.log("url", url.searchParams.toString());
-  const selectedBrands = url.searchParams.getAll("brans");
+  console.log("fs endPoint", endPoint);
+  const url = new URL(endPoint, process.env.BAKEND_URL);
+  console.log("fs url", url);
+  console.log("fs searchParams", url.searchParams.toString());
+  const selectedBrands = url.searchParams.getAll("brand");
 
-  console.log("selectedBrands", selectedBrands);
+  console.log("fs selectedBrands", selectedBrands);
 
   return new Promise<Product[]>((resolve) => {
     setTimeout(() => {
@@ -33,6 +33,6 @@ export const fetchSimulation = async (endPoint: string) => {
       }
 
       resolve(result);
-    }, 2000);
+    }, 300);
   });
 };

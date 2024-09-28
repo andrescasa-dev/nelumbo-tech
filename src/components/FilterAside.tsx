@@ -28,12 +28,7 @@ function FilterAside({ brands }: FilterAsideProps) {
   const pushQueryString = useCallback(
     (name: string, value: string, searchParams: ReadonlyURLSearchParams) => {
       const params = new URLSearchParams(searchParams.toString());
-
-      const prevValues = params.get(name)?.split(",") ?? [];
-      const values = [...prevValues, value].join(",");
-
-      params.set(name, values);
-
+      params.append(name, value);
       return params.toString();
     },
     [],
@@ -42,15 +37,7 @@ function FilterAside({ brands }: FilterAsideProps) {
   const removeQueryString = useCallback(
     (name: string, value: string, searchParams: ReadonlyURLSearchParams) => {
       const params = new URLSearchParams(searchParams.toString());
-      const prevValues = params.get(name)?.split(",") ?? [];
-      const values = prevValues.filter((val) => val !== value).join(",");
-
-      if (values === "") {
-        params.delete(name);
-      } else {
-        params.set(name, values);
-      }
-
+      params.delete(name, value);
       return params.toString();
     },
     [],

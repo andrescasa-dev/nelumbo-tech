@@ -6,7 +6,11 @@ import SearchBar from "@/components/SearchBar";
 import { brands, categories } from "@/data";
 import { Suspense } from "react";
 
-export default function Home() {
+interface HomeProps {
+  searchParams?: SearchParamsProps;
+}
+
+export default function Home({ searchParams }: HomeProps) {
   return (
     <div className="bg-background min-h-svh">
       <Navbar />
@@ -15,7 +19,7 @@ export default function Home() {
         <main>
           <SearchBar categories={categories} className="mb-6" />
           <Suspense fallback={<ProductsGridSkeleton />}>
-            <ProductsGrid />
+            <ProductsGrid searchParams={searchParams} />
           </Suspense>
         </main>
       </div>
