@@ -1,6 +1,5 @@
 "use client";
 
-import useUpdateSearchParams from "@/hooks/useUpdateSearchParams";
 import { CheckedState } from "@radix-ui/react-checkbox";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useId } from "react";
@@ -16,12 +15,15 @@ function CheckBoxesFilter({ items, paramName }: CheckBoxesFilterProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
-  const { pushQueryString, removeQueryString } = useUpdateSearchParams();
 
   const handleChecking = (value: string, isChecked: CheckedState) => {
-    const params = isChecked
-      ? pushQueryString(paramName, value)
-      : removeQueryString(paramName, value);
+    const params = new URLSearchParams(searchParams);
+
+    if (isChecked) {
+      params.append(paramName, value);
+    } else {
+      params.delete(paramName, value);
+    }
 
     router.push(`${pathname}?${params}`);
   };
