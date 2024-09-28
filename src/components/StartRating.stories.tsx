@@ -26,3 +26,11 @@ export const Small: Story = {
     size: "sm",
   },
 };
+
+export const Interactive: Story = {
+  args: {
+    isInteractive: true,
+    onClick: (value) => console.log(value),
+    rate: 2,
+  },
+};

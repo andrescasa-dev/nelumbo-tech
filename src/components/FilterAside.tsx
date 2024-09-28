@@ -2,7 +2,7 @@ import CheckBoxesFilter from "./CheckBoxesFilter";
 import RangePriceFilter from "./RangePriceFilter";
 import ScrollArea from "./ScrollArea";
 import Separator from "./Separator";
-import StarRating from "./StartRating";
+import StarRatingFilter from "./StarRatingFilter";
 
 interface FilterAsideProps {
   brands: item[];
@@ -27,7 +27,7 @@ function FilterAside({ brands }: FilterAsideProps) {
       <Separator />
       <section className="px-6">
         <h3 className="mb-2 text-primary-500 font-bold">Reviews</h3>
-        <StarRating rate={4} />
+        <StarRatingFilter />
       </section>
     </aside>
   );

@@ -38,6 +38,7 @@ function RangePriceFilter() {
   return (
     <form className="flex gap-2 items-center" onSubmit={handleSubmit}>
       <InputField
+        type="number"
         value={fromPrice}
         onChange={(e) => setFromPrice(e.target.value)}
         placeholder="100"
@@ -47,6 +48,7 @@ function RangePriceFilter() {
         {"-"}
       </span>
       <InputField
+        type="number"
         value={toPrice}
         onChange={(e) => setToPrice(e.target.value)}
         placeholder="5,000"

@@ -28,7 +28,7 @@ function CheckBoxesFilter({ items, paramName }: CheckBoxesFilterProps) {
     router.push(`${pathname}?${params}`);
   };
 
-  const handleCheck = (value: string) =>
+  const handleChecked = (value: string) =>
     searchParams.getAll(paramName).includes(value);
 
   return (
@@ -36,7 +36,7 @@ function CheckBoxesFilter({ items, paramName }: CheckBoxesFilterProps) {
       {items.map(({ label, value }) => (
         <li key={value} className="flex gap-2.5 items-center">
           <Checkbox
-            checked={handleCheck(value)}
+            checked={handleChecked(value)}
             onCheckedChange={(isChecked) => handleChecking(value, isChecked)}
             id={`${componentAccId}-${value}`}
             aria-label="select"

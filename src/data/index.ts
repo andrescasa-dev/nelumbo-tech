@@ -11,7 +11,7 @@ export const products: Product[] = [
       week: 10,
       month: 40,
     },
-    rate: 3,
+    rate: 2,
     discount: 40,
     title: "Samsung Galaxy A12",
   },
@@ -42,7 +42,7 @@ export const products: Product[] = [
       week: 10,
       month: 40,
     },
-    rate: 3,
+    rate: 4,
     title: "apple",
   },
   {
@@ -57,7 +57,7 @@ export const products: Product[] = [
       week: 10,
       month: 40,
     },
-    rate: 3,
+    rate: 5,
     title: "apple",
   },
   {
@@ -72,7 +72,7 @@ export const products: Product[] = [
       week: 10,
       month: 40,
     },
-    rate: 3,
+    rate: 6,
     title: "apple",
   },
 ];

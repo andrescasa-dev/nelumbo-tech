@@ -20,18 +20,20 @@ export const fetchSimulation = async (endPoint: string) => {
   const selectedBrands = url.searchParams.getAll("brand");
   const fromPrice = Number(url.searchParams.get("fromPrice"));
   const toPrice = Number(url.searchParams.get("toPrice"));
+  const targetRating = Number(url.searchParams.get("rating"));
 
   return new Promise<Product[]>((resolve) => {
     setTimeout(() => {
       let result = products;
 
-      result = result.filter(({ brand, price }) => {
+      result = result.filter(({ brand, price, rate }) => {
         let doesSatisfy = price >= fromPrice;
-
         if (!!toPrice) {
           doesSatisfy = doesSatisfy && price <= toPrice;
         }
-
+        if (targetRating !== 0) {
+          doesSatisfy = doesSatisfy && rate === targetRating;
+        }
         if (selectedBrands.length > 0) {
           doesSatisfy = doesSatisfy && selectedBrands.includes(brand);
         }
