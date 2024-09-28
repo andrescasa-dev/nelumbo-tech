@@ -6,7 +6,7 @@ export const products: Product[] = [
       alt: "Samsung Galaxy A12",
       src: "/Samsung-2.webp",
     },
-    price: 4100,
+    price: 2000,
     quotas: {
       week: 10,
       month: 40,
@@ -19,61 +19,61 @@ export const products: Product[] = [
     id: crypto.randomUUID(),
     brand: "apple",
     image: {
-      alt: "Samsung Galaxy A12",
+      alt: "apple",
       src: "/Samsung-2.webp",
     },
-    price: 4100,
+    price: 5100,
     quotas: {
       week: 10,
       month: 40,
     },
     rate: 3,
-    title: "Samsung Galaxy A12",
+    title: "apple",
   },
   {
     id: crypto.randomUUID(),
     brand: "apple",
     image: {
-      alt: "Samsung Galaxy A12",
+      alt: "apple",
       src: "/Samsung-2.webp",
     },
-    price: 4100,
+    price: 6200,
     quotas: {
       week: 10,
       month: 40,
     },
     rate: 3,
-    title: "Samsung Galaxy A12",
+    title: "apple",
   },
   {
     id: crypto.randomUUID(),
     brand: "apple",
     image: {
-      alt: "Samsung Galaxy A12",
+      alt: "apple",
       src: "/Samsung-2.webp",
     },
-    price: 4100,
+    price: 7100,
     quotas: {
       week: 10,
       month: 40,
     },
     rate: 3,
-    title: "Samsung Galaxy A12",
+    title: "apple",
   },
   {
     id: crypto.randomUUID(),
     brand: "apple",
     image: {
-      alt: "Samsung Galaxy A12",
+      alt: "apple",
       src: "/Samsung-2.webp",
     },
-    price: 4100,
+    price: 8100,
     quotas: {
       week: 10,
       month: 40,
     },
     rate: 3,
-    title: "Samsung Galaxy A12",
+    title: "apple",
   },
 ];
 

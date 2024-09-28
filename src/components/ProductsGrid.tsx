@@ -9,10 +9,8 @@ interface ProductsGridProps {
 
 async function ProductsGrid({ searchParams = {} }: ProductsGridProps) {
   const params = paramsToUrlParams(searchParams);
+  const products = await fetchSimulation(`/?${params}`);
 
-  const urlWithParams = `/?${params.toString()}`;
-
-  const products = await fetchSimulation(urlWithParams);
   return (
     <section className="grid grid-cols-3 gap-12">
       <h2 className="sr-only">products</h2>

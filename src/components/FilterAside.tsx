@@ -1,7 +1,5 @@
-"use client";
-
 import CheckBoxesFilter from "./CheckBoxesFilter";
-import InputField from "./InputField";
+import RangePriceFilter from "./RangePriceFilter";
 import ScrollArea from "./ScrollArea";
 import Separator from "./Separator";
 import StarRating from "./StartRating";
@@ -23,13 +21,7 @@ function FilterAside({ brands }: FilterAsideProps) {
       <Separator />
       <section className="px-6">
         <h3 className="mb-2 text-primary-500 font-bold">Precio</h3>
-        <div className="flex gap-2 items-center">
-          <InputField placeholder="100" className="w-full" />
-          <span aria-hidden="true" className="text-[#B4B4B4]">
-            {"-"}
-          </span>
-          <InputField placeholder="5,000" className="w-full" />
-        </div>
+        <RangePriceFilter />
       </section>
 
       <Separator />
