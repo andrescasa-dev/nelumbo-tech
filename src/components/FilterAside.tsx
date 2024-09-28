@@ -1,81 +1,22 @@
 "use client";
 
-import { CheckedState } from "@radix-ui/react-checkbox";
-import { useCallback, useId } from "react";
-import Checkbox from "./Checkbox";
+import CheckBoxesFilter from "./CheckBoxesFilter";
 import InputField from "./InputField";
 import ScrollArea from "./ScrollArea";
 import Separator from "./Separator";
 import StarRating from "./StartRating";
-import {
-  ReadonlyURLSearchParams,
-  usePathname,
-  useRouter,
-  useSearchParams,
-} from "next/navigation";
 
 interface FilterAsideProps {
-  brands: string[];
+  brands: item[];
 }
 
 function FilterAside({ brands }: FilterAsideProps) {
-  const componentAccId = useId();
-
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  const pushQueryString = useCallback(
-    (name: string, value: string, searchParams: ReadonlyURLSearchParams) => {
-      const params = new URLSearchParams(searchParams.toString());
-      params.append(name, value);
-      return params.toString();
-    },
-    [],
-  );
-
-  const removeQueryString = useCallback(
-    (name: string, value: string, searchParams: ReadonlyURLSearchParams) => {
-      const params = new URLSearchParams(searchParams.toString());
-      params.delete(name, value);
-      return params.toString();
-    },
-    [],
-  );
-
-  const handleBrandChecking = (brand: string, isChecked: CheckedState) => {
-    const params = isChecked
-      ? pushQueryString("brand", brand, searchParams)
-      : removeQueryString("brand", brand, searchParams);
-
-    router.push(`${pathname}?${params}`);
-  };
-
   return (
     <aside className="w-[21.938rem] shadow-soft flex flex-col gap-5 py-6 bg-white h-fit">
       <section className="px-6">
         <h3 className="mb-2 text-primary-500 font-bold">Marcas</h3>
         <ScrollArea className="h-[12.063rem] px-6">
-          <ul className="flex flex-col gap-1">
-            {brands.map((brand) => (
-              <li key={brand} className="flex gap-2.5 items-center">
-                <Checkbox
-                  value={brand}
-                  onCheckedChange={(isChecked) =>
-                    handleBrandChecking(brand, isChecked)
-                  }
-                  id={`${componentAccId}-${brand}`}
-                  aria-label="select"
-                />
-                <label
-                  className="cursor-pointer"
-                  htmlFor={`${componentAccId}-${brand}`}
-                >
-                  {brand}
-                </label>
-              </li>
-            ))}
-          </ul>
+          <CheckBoxesFilter items={brands} paramName={"brand"} />
         </ScrollArea>
       </section>
 

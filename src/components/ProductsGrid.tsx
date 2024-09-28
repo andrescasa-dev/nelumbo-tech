@@ -8,11 +8,9 @@ interface ProductsGridProps {
 }
 
 async function ProductsGrid({ searchParams = {} }: ProductsGridProps) {
-  console.log("searchParams grid", searchParams);
   const params = paramsToUrlParams(searchParams);
 
   const urlWithParams = `/?${params.toString()}`;
-  console.log("urlWithParams", urlWithParams);
 
   const products = await fetchSimulation(urlWithParams);
   return (

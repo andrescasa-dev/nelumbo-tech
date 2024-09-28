@@ -84,15 +84,15 @@ export const categories = [
 ];
 
 export const brands = [
-  "apple",
-  "samsung",
-  "huawei",
-  "xiaomi",
-  "oppo",
-  "sony",
-  "onePlus",
-  "google",
-  "nokia",
-  "motorola",
-  "lg",
+  { label: "Apple", value: "apple" },
+  { label: "Samsung", value: "samsung" },
+  { label: "Huawei", value: "huawei" },
+  { label: "Xiaomi", value: "xiaomi" },
+  { label: "Oppo", value: "oppo" },
+  { label: "Sony", value: "sony" },
+  { label: "OnePlus", value: "onePlus" },
+  { label: "Google", value: "google" },
+  { label: "Nokia", value: "nokia" },
+  { label: "Motorola", value: "motorola" },
+  { label: "LG", value: "lg" },
 ];
