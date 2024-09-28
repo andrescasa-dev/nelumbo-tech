@@ -1,4 +1,4 @@
-import { cn } from "@/utils";
+import { cn } from "@/utils/utilsClient";
 import { cva, VariantProps } from "class-variance-authority";
 import Link from "next/link";
 

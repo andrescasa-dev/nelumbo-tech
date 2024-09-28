@@ -1,4 +1,4 @@
-import { cn } from "@/utils";
+import { cn } from "@/utils/utilsClient";
 import * as DropdownMenuRadix from "@radix-ui/react-dropdown-menu";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";

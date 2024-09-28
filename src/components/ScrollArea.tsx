@@ -1,4 +1,4 @@
-import { cn } from "@/utils";
+import { cn } from "@/utils/utilsClient";
 import * as ScrollAreaRadix from "@radix-ui/react-scroll-area";
 import { PropsWithChildren } from "react";
 

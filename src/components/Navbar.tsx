@@ -17,7 +17,7 @@ const navigation = [
 
 function Navbar() {
   return (
-    <header>
+    <header className="mb-8">
       <nav className="shadow-[0px_5px_6px_#00000029]">
         <div className="bg-gradient-to-b from-primary-200 to-primary-300 py-5">
           <div className="flex justify-between items-center max-w-screen-3xl mx-auto">

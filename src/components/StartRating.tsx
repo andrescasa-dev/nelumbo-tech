@@ -1,4 +1,4 @@
-import { cn } from "@/utils";
+import { cn } from "@/utils/utilsClient";
 import { Star } from "lucide-react";
 
 interface StarRatingProps {

@@ -14,6 +14,7 @@ interface Quotas {
 }
 
 interface Product {
+  brand: string;
   id: string;
   image: ImageProps;
   title: string;
@@ -21,4 +22,8 @@ interface Product {
   price: number;
   quotas: Quotas;
   discount?: number; // percentage
+}
+
+interface SearchParamsProps {
+  [key: string]: string | string[] | undefined;
 }

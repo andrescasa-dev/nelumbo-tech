@@ -4,12 +4,12 @@ import IconButton from "./IconButton";
 import { Heart } from "lucide-react";
 import StarRating from "./StartRating";
 import Button from "./Button";
-import { formatPrice } from "@/utils";
+import { formatPrice } from "@/utils/utilsClient";
 
 function ProductCard({ image, title, rate, price, quotas, discount }: Product) {
   const discountedPrice = discount ? price - price * (discount / 100) : price;
   return (
-    <article className="relative shadow-soft rounded-2xl w-fit overflow-hidden">
+    <article className="relative shadow-soft rounded-2xl w-fit overflow-hidden flex flex-col">
       <div className="relative bg-gradient-to-t from-[#f3f3f3] to-white to-[2%]">
         <IconButton variant="ghost" className="absolute right-2 top-2">
           <Heart aria-label="like" className="size-8" />
@@ -22,7 +22,7 @@ function ProductCard({ image, title, rate, price, quotas, discount }: Product) {
           </span>
         )}
       </div>
-      <section className="px-6 py-5 flex flex-col gap-3 bg-white ">
+      <section className="px-6 py-5 flex flex-col gap-3 bg-white grow">
         <div className="flex justify-between">
           <div className="flex flex-col">
             <h2 className="text-base font-semibold text-foreground-400 capitalize mt-2.5">
@@ -42,7 +42,7 @@ function ProductCard({ image, title, rate, price, quotas, discount }: Product) {
             )}
           </div>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between mt-auto">
           <p className="text-muted-400 text-sm flex flex-col ">
             <span>{formatPrice(quotas.week)} p/semana</span>
             <span> o {formatPrice(quotas.month)} p/mes</span>

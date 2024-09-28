@@ -1,9 +1,22 @@
+"use client";
+
 import { Search } from "lucide-react";
 import Dropdown from "./Dropdown";
+import { cn } from "@/utils/utilsClient";
 
-function SearchBar({ categories }: { categories: item[] }) {
+interface SearchBarProps {
+  categories: item[];
+  className?: string;
+}
+
+function SearchBar({ categories, className }: SearchBarProps) {
   return (
-    <section className="flex h-11 items-center rounded-full max-w-[563px] border border-muted-300">
+    <section
+      className={cn(
+        "flex h-11 items-center rounded-full max-w-[563px] border border-muted-300 bg-white",
+        className,
+      )}
+    >
       <div className="flex items-center grow h-full">
         <Search strokeWidth={3} className="size-4 text-muted-400 mx-3 " />
         <input
