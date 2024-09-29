@@ -19,10 +19,10 @@ const navigation = [
 
 function Navbar() {
   return (
-    <header className="mb-8">
-      <nav className="shadow-[0px_5px_6px_#00000029] ">
-        <div className="bg-gradient-to-b from-primary-200 to-primary-300 py-5 px-4">
-          <div className="flex justify-between items-center max-w-screen-xl mx-auto">
+    <header className="mb-4 md:mb-8">
+      <nav className="shadow-[0px_5px_6px_#00000029]">
+        <div className="bg-gradient-to-b from-primary-200 to-primary-300 px-4 py-5">
+          <div className="mx-auto flex max-w-screen-xl items-center justify-between">
             <HamburgerMenu navigation={navigation}>
               <IconButton className="md:hidden">
                 <Menu className="size-6 md:size-8" />
@@ -31,7 +31,7 @@ function Navbar() {
             <Link href="#" aria-label="Logo de macro pay">
               <Logo className="w-[150px] md:w-auto" />
             </Link>
-            <div className="flex gap-2 items-center">
+            <div className="flex items-center gap-2">
               <Link
                 className={cn(
                   buttonVariants({ variant: "primary" }),
@@ -56,7 +56,7 @@ function Navbar() {
             </div>
           </div>
         </div>
-        <ul className="md:flex gap-12 p-4 px-4 max-w-screen-xl mx-auto hidden ">
+        <ul className="mx-auto hidden max-w-screen-xl gap-12 p-4 px-4 md:flex">
           {navigation.map(({ href, isActive, label }) => (
             <li key={label}>
               <NavLink href={href} isActive={isActive}>

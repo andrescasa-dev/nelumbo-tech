@@ -29,21 +29,21 @@ function SearchBar({ categories, className }: SearchBarProps) {
   return (
     <section
       className={cn(
-        "flex items-center rounded-full max-w-[563px] border border-muted-300 bg-white pl-5",
+        "xs:flex-row flex max-w-[563px] flex-col items-center rounded-full border border-muted-300 bg-white pl-5",
         className,
       )}
     >
-      <div className="flex items-center grow h-full">
-        <Search strokeWidth={3} className="size-4 text-muted-400 mr-3 " />
+      <div className="flex h-full grow items-center px-5 py-4">
+        <Search strokeWidth={3} className="mr-3 size-4 text-muted-400" />
         <input
-          className="placeholder:text-muted-500 grow text-sm h-full inline-block min-w-[20.4rem]"
+          className="inline-block h-full grow text-sm placeholder:text-muted-500 md:min-w-[20.4rem]"
           type="text"
           placeholder="Encuentra el producto que necesitas"
         />
       </div>
       <Dropdown
         itemsClassName="min-w-[174px] py-2.5 px-4"
-        className="min-w-[194px] bg-muted-400 py-4 px-5 rounded-e-full text-white text-sm data-[state=open]:bg-[#EBEFF4] data-[state=open]:text-muted-500"
+        className="xs:rounded-s-none min-w-[194px] rounded-e-full rounded-s-full bg-muted-400 px-5 py-4 text-sm text-white data-[state=open]:bg-[#EBEFF4] data-[state=open]:text-muted-500"
         items={categories}
         onValueChange={handleDropdownClick}
       >

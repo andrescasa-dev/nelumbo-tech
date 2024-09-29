@@ -46,6 +46,7 @@ const config: Config = {
       },
       // @ts-expect-error override the md key is intended
       screens: {
+        xs: "427px",
         md: "880px",
       },
     },

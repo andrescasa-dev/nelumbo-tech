@@ -12,17 +12,17 @@ interface HomeProps {
 
 export default function Home({ searchParams }: HomeProps) {
   return (
-    <div className="bg-background min-h-svh">
+    <div className="min-h-svh bg-background">
       <Navbar />
-      {/* <div className="flex gap-11 max-w-screen-3xl mx-auto">
-        <FilterAside brands={brands} />
-        <main>
-          <SearchBar categories={categories} className="mb-6" />
-          <Suspense fallback={<ProductsGridSkeleton />}>
+      <div className="max-w-screen-3xl mx-auto flex gap-11">
+        {/* <FilterAside brands={brands} /> */}
+        <main className="w-full px-4 md:w-auto">
+          <SearchBar categories={categories} className="mb-6 max-w-none" />
+          {/* <Suspense fallback={<ProductsGridSkeleton />}>
             <ProductsGrid searchParams={searchParams} />
-          </Suspense>
+          </Suspense> */}
         </main>
-      </div> */}
+      </div>
     </div>
   );
 }
