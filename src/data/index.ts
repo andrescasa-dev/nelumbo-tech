@@ -1,6 +1,7 @@
 export const products: Product[] = [
   {
     id: crypto.randomUUID(),
+    category: "cell-phones",
     brand: "samsung",
     image: {
       alt: "Samsung Galaxy A12",
@@ -17,6 +18,7 @@ export const products: Product[] = [
   },
   {
     id: crypto.randomUUID(),
+    category: "cell-phones",
     brand: "apple",
     image: {
       alt: "apple",
@@ -32,6 +34,7 @@ export const products: Product[] = [
   },
   {
     id: crypto.randomUUID(),
+    category: "cell-phones",
     brand: "apple",
     image: {
       alt: "apple",
@@ -47,6 +50,7 @@ export const products: Product[] = [
   },
   {
     id: crypto.randomUUID(),
+    category: "cell-phones",
     brand: "apple",
     image: {
       alt: "apple",
@@ -62,6 +66,7 @@ export const products: Product[] = [
   },
   {
     id: crypto.randomUUID(),
+    category: "cell-phones",
     brand: "apple",
     image: {
       alt: "apple",
@@ -75,11 +80,60 @@ export const products: Product[] = [
     rate: 6,
     title: "apple",
   },
+  {
+    id: crypto.randomUUID(),
+    category: "tablets",
+    brand: "samsung",
+    image: {
+      alt: "Samsung Galaxy A12",
+      src: "/Samsung-2.webp",
+    },
+    price: 2000,
+    quotas: {
+      week: 10,
+      month: 40,
+    },
+    rate: 2,
+    discount: 40,
+    title: "Samsung Galaxy A12",
+  },
+  {
+    id: crypto.randomUUID(),
+    category: "tablets",
+    brand: "apple",
+    image: {
+      alt: "apple",
+      src: "/Samsung-2.webp",
+    },
+    price: 5100,
+    quotas: {
+      week: 10,
+      month: 40,
+    },
+    rate: 3,
+    title: "apple",
+  },
+  {
+    id: crypto.randomUUID(),
+    category: "tablets",
+    brand: "apple",
+    image: {
+      alt: "apple",
+      src: "/Samsung-2.webp",
+    },
+    price: 6200,
+    quotas: {
+      week: 10,
+      month: 40,
+    },
+    rate: 4,
+    title: "apple",
+  },
 ];
 
 export const categories = [
-  { label: "Todas", value: "todas" },
-  { label: "Celulares", value: "mobiles" },
+  { label: "Todas", value: "all" },
+  { label: "Celulares", value: "cell-phones" },
   { label: "Tablets", value: "tablets" },
 ];
 

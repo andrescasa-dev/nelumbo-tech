@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/utils/utilsClient";
 import * as DropdownMenuRadix from "@radix-ui/react-dropdown-menu";
 import { ChevronDown } from "lucide-react";
@@ -8,6 +10,7 @@ interface DropdownProps {
   className?: string;
   children: string;
   itemsClassName?: string;
+  onValueChange?: (value: string) => void;
 }
 
 function Dropdown({
@@ -15,6 +18,7 @@ function Dropdown({
   className,
   children,
   itemsClassName,
+  onValueChange,
 }: DropdownProps) {
   const [category, setCategory] = useState<string | undefined>(undefined);
   return (
@@ -29,7 +33,10 @@ function Dropdown({
         <DropdownMenuRadix.Content align="start" className={"shadow-soft"}>
           <DropdownMenuRadix.RadioGroup
             value={category}
-            onValueChange={setCategory}
+            onValueChange={(value) => {
+              setCategory(value);
+              if (onValueChange !== undefined) onValueChange(value);
+            }}
           >
             {items.map(({ value, label }) => (
               <DropdownMenuRadix.RadioItem

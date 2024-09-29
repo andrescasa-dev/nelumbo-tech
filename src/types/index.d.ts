@@ -15,6 +15,7 @@ interface Quotas {
 
 interface Product {
   brand: string;
+  category: "cell-phones" | "tablets";
   id: string;
   image: ImageProps;
   title: string;

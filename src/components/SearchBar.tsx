@@ -3,6 +3,7 @@
 import { Search } from "lucide-react";
 import Dropdown from "./Dropdown";
 import { cn } from "@/utils/utilsClient";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 interface SearchBarProps {
   categories: item[];
@@ -10,6 +11,21 @@ interface SearchBarProps {
 }
 
 function SearchBar({ categories, className }: SearchBarProps) {
+  const router = useRouter();
+  const pathName = usePathname();
+  const searchParams = useSearchParams();
+
+  const handleDropdownClick = (value: string) => {
+    const params = new URLSearchParams(searchParams);
+    if (value !== "all") {
+      params.set("category", value);
+    } else {
+      params.delete("category");
+    }
+    console.log(value);
+    router.push(`${pathName}?${params}`);
+  };
+
   return (
     <section
       className={cn(
@@ -29,6 +45,7 @@ function SearchBar({ categories, className }: SearchBarProps) {
         itemsClassName="min-w-[174px] py-2.5 px-4"
         className="min-w-[194px] bg-muted-400 py-3 px-5 rounded-e-full text-white text-sm data-[state=open]:bg-[#EBEFF4] data-[state=open]:text-muted-500"
         items={categories}
+        onValueChange={handleDropdownClick}
       >
         Todas las Categorías
       </Dropdown>

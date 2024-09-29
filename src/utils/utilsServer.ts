@@ -21,12 +21,12 @@ export const fetchSimulation = async (endPoint: string) => {
   const fromPrice = Number(url.searchParams.get("fromPrice"));
   const toPrice = Number(url.searchParams.get("toPrice"));
   const targetRating = Number(url.searchParams.get("rating"));
+  const targetCategory = url.searchParams.get("category");
 
   return new Promise<Product[]>((resolve) => {
     setTimeout(() => {
       let result = products;
-
-      result = result.filter(({ brand, price, rate }) => {
+      result = result.filter(({ brand, price, rate, category }) => {
         let doesSatisfy = price >= fromPrice;
         if (!!toPrice) {
           doesSatisfy = doesSatisfy && price <= toPrice;
@@ -36,6 +36,9 @@ export const fetchSimulation = async (endPoint: string) => {
         }
         if (selectedBrands.length > 0) {
           doesSatisfy = doesSatisfy && selectedBrands.includes(brand);
+        }
+        if (targetCategory) {
+          doesSatisfy = doesSatisfy && targetCategory === category;
         }
         return doesSatisfy;
       });
