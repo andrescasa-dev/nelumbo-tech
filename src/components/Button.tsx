@@ -11,7 +11,7 @@ export const buttonVariants = cva("rounded-lg", {
         "text-secondary-400 font-medium text-xl capitalize hover:bg-primary-300 ",
     },
     size: {
-      big: "px-[1.87em] py-[1.43em]",
+      big: "px-7 py-6",
       mid: "py-5 px-11",
       small: "px-5 py-2.5  font-semibold",
     },

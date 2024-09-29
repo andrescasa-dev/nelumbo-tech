@@ -5,7 +5,7 @@ import Separator from "./Separator";
 import StarRatingFilter from "./StarRatingFilter";
 
 interface FilterAsideProps {
-  brands: item[];
+  brands: Item[];
 }
 
 function FilterAside({ brands }: FilterAsideProps) {

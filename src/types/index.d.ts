@@ -1,4 +1,4 @@
-type item = {
+type Item = {
   label: string;
   value: string;
 };

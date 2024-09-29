@@ -6,7 +6,7 @@ import { cn } from "@/utils/utilsClient";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 interface SearchBarProps {
-  categories: item[];
+  categories: Item[];
   className?: string;
 }
 

@@ -6,7 +6,7 @@ import { useId } from "react";
 import Checkbox from "./Checkbox";
 
 interface CheckBoxesFilterProps {
-  items: item[];
+  items: Item[];
   paramName: string;
 }
 

@@ -14,7 +14,7 @@ export default function Home({ searchParams }: HomeProps) {
   return (
     <div className="bg-background min-h-svh">
       <Navbar />
-      <div className="flex gap-11 max-w-screen-3xl mx-auto">
+      {/* <div className="flex gap-11 max-w-screen-3xl mx-auto">
         <FilterAside brands={brands} />
         <main>
           <SearchBar categories={categories} className="mb-6" />
@@ -22,7 +22,7 @@ export default function Home({ searchParams }: HomeProps) {
             <ProductsGrid searchParams={searchParams} />
           </Suspense>
         </main>
-      </div>
+      </div> */}
     </div>
   );
 }

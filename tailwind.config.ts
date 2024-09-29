@@ -44,6 +44,10 @@ const config: Config = {
       boxShadow: {
         soft: "0px 3px 6px #00000029",
       },
+      // @ts-expect-error override the md key is intended
+      screens: {
+        md: "880px",
+      },
     },
   },
   plugins: [],

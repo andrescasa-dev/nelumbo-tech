@@ -1,12 +1,13 @@
 import React from "react";
 
-function Logo() {
+function Logo({ className }: { className: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="202.599"
       height="44.953"
       viewBox="0 0 202.599 44.953"
+      className={className}
     >
       <g data-name="Grupo 5" transform="translate(-294.701 -230.429)">
         <path

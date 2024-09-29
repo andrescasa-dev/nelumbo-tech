@@ -1,6 +1,8 @@
-import { ShoppingCart } from "lucide-react";
+import { cn } from "@/utils/utilsClient";
+import { Menu, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "./Button";
+import HamburgerMenu from "./HamburgerMenu";
 import IconButton from "./IconButton";
 import Logo from "./Logo";
 import NavLink from "./NavLink";
@@ -18,26 +20,43 @@ const navigation = [
 function Navbar() {
   return (
     <header className="mb-8">
-      <nav className="shadow-[0px_5px_6px_#00000029]">
-        <div className="bg-gradient-to-b from-primary-200 to-primary-300 py-5">
-          <div className="flex justify-between items-center max-w-screen-3xl mx-auto">
+      <nav className="shadow-[0px_5px_6px_#00000029] ">
+        <div className="bg-gradient-to-b from-primary-200 to-primary-300 py-5 px-4">
+          <div className="flex justify-between items-center max-w-screen-xl mx-auto">
+            <HamburgerMenu navigation={navigation}>
+              <IconButton className="md:hidden">
+                <Menu className="size-6 md:size-8" />
+              </IconButton>
+            </HamburgerMenu>
             <Link href="#" aria-label="Logo de macro pay">
-              <Logo />
+              <Logo className="w-[150px] md:w-auto" />
             </Link>
             <div className="flex gap-2 items-center">
-              <Link className={buttonVariants({ variant: "primary" })} href="#">
+              <Link
+                className={cn(
+                  buttonVariants({ variant: "primary" }),
+                  "hidden md:flex",
+                )}
+                href="#"
+              >
                 Crea tu cuenta
               </Link>
-              <Link className={buttonVariants({ variant: "ghost" })} href="#">
+              <Link
+                className={cn(
+                  buttonVariants({ variant: "ghost" }),
+                  "hidden md:flex",
+                )}
+                href="#"
+              >
                 Iniciar sesión
               </Link>
               <IconButton aria-label="abrir el carrito de compras">
-                <ShoppingCart className="size-8" />
+                <ShoppingCart className="size-6 md:size-8" />
               </IconButton>
             </div>
           </div>
         </div>
-        <ul className="flex gap-12 p-4 pl-0 max-w-screen-3xl mx-auto">
+        <ul className="md:flex gap-12 p-4 px-4 max-w-screen-xl mx-auto hidden ">
           {navigation.map(({ href, isActive, label }) => (
             <li key={label}>
               <NavLink href={href} isActive={isActive}>

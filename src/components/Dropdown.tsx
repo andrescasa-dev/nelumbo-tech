@@ -6,7 +6,7 @@ import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 interface DropdownProps {
-  items: item[];
+  items: Item[];
   className?: string;
   children: string;
   itemsClassName?: string;
