@@ -9,23 +9,23 @@ import StarRating from "./StartRating";
 function ProductCard({ image, title, rate, price, quotas, discount }: Product) {
   const discountedPrice = discount ? price - price * (discount / 100) : price;
   return (
-    <article className="relative shadow-soft rounded-2xl w-fit overflow-hidden flex flex-col">
-      <div className="relative bg-gradient-to-t from-[#f3f3f3] to-white to-[2%] flex justify-center items-center p-10">
+    <article className="relative flex w-fit flex-col overflow-hidden rounded-2xl shadow-soft">
+      <div className="relative flex items-center justify-center bg-gradient-to-t from-[#f3f3f3] to-white to-[2%] p-10">
         <IconButton variant="ghost" className="absolute right-2 top-2">
           <Heart aria-label="like" className="size-8" />
         </IconButton>
         <Image width={244} height={333} alt={image.alt} src={image.src} />
         {discount && (
-          <span className="absolute bottom-2 left-3.5 bg-accent-400 aspect-square rounded-full p-2 text-white text-4xl font-bold text-center flex justify-center items-center">
+          <span className="absolute bottom-2 left-3.5 flex aspect-square items-center justify-center rounded-full bg-accent-400 p-2 text-center text-4xl font-bold text-white">
             <span className="sr-only">descuento de:</span>
             {discount}%
           </span>
         )}
       </div>
-      <section className="px-6 py-5 flex flex-col gap-3 bg-white grow">
+      <section className="flex grow flex-col gap-3 bg-white px-6 py-5">
         <div className="flex justify-between">
           <div className="flex flex-col">
-            <h2 className="text-base font-semibold text-foreground-400 capitalize mt-2.5">
+            <h2 className="mt-2.5 text-base font-semibold capitalize text-foreground-400">
               {title}
             </h2>
             <StarRating size="md" rate={rate} />
@@ -35,15 +35,15 @@ function ProductCard({ image, title, rate, price, quotas, discount }: Product) {
               {formatPrice(discountedPrice)}
             </span>
             {discount && (
-              <span className="text-muted-400 font-semibold text-xl line-through -mt-2">
+              <span className="-mt-2 text-xl font-semibold text-muted-400 line-through">
                 <span className="sr-only">precio sin descuento: </span>
                 {formatPrice(price)}
               </span>
             )}
           </div>
         </div>
-        <div className="flex justify-between mt-auto">
-          <p className="text-muted-400 text-sm flex flex-col ">
+        <div className="mt-auto flex justify-between">
+          <p className="flex flex-col text-sm text-muted-400">
             <span>{formatPrice(quotas.week)} p/semana</span>
             <span> o {formatPrice(quotas.month)} p/mes</span>
           </p>
