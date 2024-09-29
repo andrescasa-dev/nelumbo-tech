@@ -1,20 +1,20 @@
-import Image from "next/image";
-import React from "react";
-import IconButton from "./IconButton";
-import { Heart } from "lucide-react";
-import StarRating from "./StartRating";
-import Button from "./Button";
 import { formatPrice } from "@/utils/utilsClient";
+import { Heart } from "lucide-react";
+import Image from "next/image";
+import Button from "./Button";
+import IconButton from "./IconButton";
+import ProductDialog from "./ProductDialog";
+import StarRating from "./StartRating";
 
 function ProductCard({ image, title, rate, price, quotas, discount }: Product) {
   const discountedPrice = discount ? price - price * (discount / 100) : price;
   return (
     <article className="relative shadow-soft rounded-2xl w-fit overflow-hidden flex flex-col">
-      <div className="relative bg-gradient-to-t from-[#f3f3f3] to-white to-[2%]">
+      <div className="relative bg-gradient-to-t from-[#f3f3f3] to-white to-[2%] flex justify-center items-center p-10">
         <IconButton variant="ghost" className="absolute right-2 top-2">
           <Heart aria-label="like" className="size-8" />
         </IconButton>
-        <Image width={385} height={250} alt={image.alt} src={image.src} />
+        <Image width={244} height={333} alt={image.alt} src={image.src} />
         {discount && (
           <span className="absolute bottom-2 left-3.5 bg-accent-400 aspect-square rounded-full p-2 text-white text-4xl font-bold text-center flex justify-center items-center">
             <span className="sr-only">descuento de:</span>
@@ -47,9 +47,18 @@ function ProductCard({ image, title, rate, price, quotas, discount }: Product) {
             <span>{formatPrice(quotas.week)} p/semana</span>
             <span> o {formatPrice(quotas.month)} p/mes</span>
           </p>
-          <Button variant="primary" size="small">
-            Lo quiero
-          </Button>
+          <ProductDialog
+            image={image}
+            title={title}
+            price={price}
+            totalToPay={price}
+            cartItems={1}
+            quotas={quotas}
+          >
+            <Button variant="primary" size="small">
+              Lo quiero
+            </Button>
+          </ProductDialog>
         </div>
       </section>
     </article>

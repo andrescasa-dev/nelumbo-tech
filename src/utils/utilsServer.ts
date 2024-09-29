@@ -18,21 +18,24 @@ export const paramsToUrlParams = (searchParams: SearchParamsProps) => {
 export const fetchSimulation = async (endPoint: string) => {
   const url = new URL(endPoint, process.env.BAKEND_URL);
   const selectedBrands = url.searchParams.getAll("brand");
-  const fromPrice = Number(url.searchParams.get("fromPrice"));
-  const toPrice = Number(url.searchParams.get("toPrice"));
-  const targetRating = Number(url.searchParams.get("rating"));
+  const fromPrice = url.searchParams.get("fromPrice");
+  const toPrice = url.searchParams.get("toPrice");
+  const targetRating = url.searchParams.get("rating");
   const targetCategory = url.searchParams.get("category");
 
   return new Promise<Product[]>((resolve) => {
     setTimeout(() => {
       let result = products;
       result = result.filter(({ brand, price, rate, category }) => {
-        let doesSatisfy = price >= fromPrice;
-        if (!!toPrice) {
-          doesSatisfy = doesSatisfy && price <= toPrice;
+        let doesSatisfy = true;
+        if (fromPrice) {
+          doesSatisfy = price >= Number(fromPrice);
         }
-        if (targetRating !== 0) {
-          doesSatisfy = doesSatisfy && rate === targetRating;
+        if (toPrice) {
+          doesSatisfy = doesSatisfy && price <= Number(toPrice);
+        }
+        if (targetRating) {
+          doesSatisfy = doesSatisfy && rate === Number(targetRating);
         }
         if (selectedBrands.length > 0) {
           doesSatisfy = doesSatisfy && selectedBrands.includes(brand);

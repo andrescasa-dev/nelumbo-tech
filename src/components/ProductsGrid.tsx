@@ -1,7 +1,5 @@
-import { fetchSimulation } from "@/utils/utilsServer";
-import React from "react";
+import { fetchSimulation, paramsToUrlParams } from "@/utils/utilsServer";
 import ProductCard from "./ProductCard";
-import { paramsToUrlParams } from "@/utils/utilsServer";
 
 interface ProductsGridProps {
   searchParams?: SearchParamsProps;
