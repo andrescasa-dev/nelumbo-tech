@@ -27,7 +27,7 @@ export default function Home({ searchParams }: HomeProps) {
 
       <Section
         title="Nuestros Productos Más Vendidos"
-        className="col-span-2 mt-6"
+        className="mt-6 md:col-span-2"
       >
         <Suspense fallback={<ProductsGridSkeleton />}>
           <ProductsGrid searchParams={{ related: "6" }} />
