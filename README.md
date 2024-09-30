@@ -1,11 +1,17 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
+## Quick Start
+Par
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+abrir [http://localhost:3000](http://localhost:3000) para ver los resultados
+
+## Características de la solución
+- Responsive design Mobile first
+- HTML streaming con Next.js 14
+- Accesibilidad: keyboard support & Screen Reader support
+- Pequeña documentación de los componentes primitivos
+
+## aclaraciones
+- En ocasiones hay un error de hidratación, la pagina no es interactuable se soluciona recargando
