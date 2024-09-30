@@ -16,7 +16,7 @@ export const paramsToUrlParams = (searchParams: SearchParamsProps) => {
 };
 
 export const fetchProductsSimulation = async (endPoint: string) => {
-  const url = new URL(endPoint, process.env.BAKEND_URL);
+  const url = new URL(endPoint, "http://localhost:3000");
   const selectedBrands = url.searchParams.getAll("brand");
   const fromPrice = url.searchParams.get("fromPrice");
   const toPrice = url.searchParams.get("toPrice");

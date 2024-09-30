@@ -1,5 +1,8 @@
 ## Quick Start
-Par
+
+```bash
+npm install
+```
 
 ```bash
 npm run dev
@@ -14,4 +17,5 @@ abrir [http://localhost:3000](http://localhost:3000) para ver los resultados
 - Pequeña documentación de los componentes primitivos
 
 ## aclaraciones
+- 
 - En ocasiones hay un error de hidratación, la pagina no es interactuable se soluciona recargando
