@@ -18,4 +18,4 @@ abrir [http://localhost:3000](http://localhost:3000) para ver los resultados
 
 ## aclaraciones
 - Por temas de agilidad solo agregué dos detalles de producto, para el primer celular y la primera tablet
-- En ocasiones hay un error de hidratación, la pagina no es interactuable se soluciona recargando, es un bug que no habia notado hasta probando que todo funciona, solo pasa en el primer render des pues del npm run dev
+- En ocasiones hay un error de hidratación, la pagina no es interactuable se soluciona recargando, es un bug que no había notado hasta probando que todo funciona, solo pasa en el primer render después del npm run dev
