@@ -1,6 +1,5 @@
-import "server-only";
 import { products, productsFullData } from "@/data";
-import { resolve } from "path";
+import "server-only";
 
 export const paramsToUrlParams = (searchParams: SearchParamsProps) => {
   const params = new URLSearchParams();
@@ -23,9 +22,11 @@ export const fetchProductsSimulation = async (endPoint: string) => {
   const toPrice = url.searchParams.get("toPrice");
   const targetRating = url.searchParams.get("rating");
   const targetCategory = url.searchParams.get("category");
+  const related = url.searchParams.get("related");
 
   return new Promise<Product[]>((resolve) => {
     setTimeout(() => {
+      if (related) resolve(products.slice(0, Number(related)));
       let result = products;
       result = result.filter(({ brand, price, rate, category }) => {
         let doesSatisfy = true;
@@ -52,11 +53,11 @@ export const fetchProductsSimulation = async (endPoint: string) => {
   });
 };
 
-export const fetchOneProductSimulation = (targetId: string)=>{
-  return new Promise<ProductFullData | undefined>((resolve)=>{
-    setTimeout(()=>{
-      const item = productsFullData.find(({id})=> targetId === id)
-      resolve(item)
-    }, 300)
-  })
-}
+export const fetchOneProductSimulation = (targetId: string) => {
+  return new Promise<ProductFullData | undefined>((resolve) => {
+    setTimeout(() => {
+      const item = productsFullData.find(({ id }) => targetId === id);
+      resolve(item);
+    }, 300);
+  });
+};

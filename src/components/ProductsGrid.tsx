@@ -1,4 +1,7 @@
-import { fetchProductsSimulation, paramsToUrlParams } from "@/utils/utilsServer";
+import {
+  fetchProductsSimulation,
+  paramsToUrlParams,
+} from "@/utils/utilsServer";
 import ProductCard from "./ProductCard";
 import { Glasses } from "lucide-react";
 

@@ -8,33 +8,34 @@ import { useState } from "react";
 interface DropdownProps {
   items: Item[];
   className?: string;
-  children: string;
   itemsClassName?: string;
   onValueChange?: (value: string) => void;
+  defaultLabel: string
 }
 
 function Dropdown({
   items,
   className,
-  children,
+  defaultLabel,
   itemsClassName,
   onValueChange,
 }: DropdownProps) {
-  const [category, setCategory] = useState<string | undefined>(undefined);
+  const [selectedValue, setSelectedValue] = useState<string | undefined>(undefined);
+  const selectedItem = items.find(({value})=>value === selectedValue)
   return (
     <DropdownMenuRadix.Root>
       <DropdownMenuRadix.Trigger asChild>
         <button className={cn("group flex items-center gap-1", className)}>
-          {children}
+          {selectedItem ? selectedItem.label : defaultLabel}
           <ChevronDown className="size-4 text-inherit group-data-[state=open]:rotate-180" />
         </button>
       </DropdownMenuRadix.Trigger>
       <DropdownMenuRadix.Portal>
-        <DropdownMenuRadix.Content align="start" className={"shadow-soft"}>
+        <DropdownMenuRadix.Content align="start" className={"shadow-soft select-none"}>
           <DropdownMenuRadix.RadioGroup
-            value={category}
+            value={selectedValue}
             onValueChange={(value) => {
-              setCategory(value);
+              setSelectedValue(value);
               if (onValueChange !== undefined) onValueChange(value);
             }}
           >

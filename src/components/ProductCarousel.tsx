@@ -31,7 +31,7 @@ function ProductCarousel({ images, discount }: ProductCarouselProps) {
             type="button"
             onClick={() => handleClick(i)}
             key={i}
-            className="border-muted-30 relative aspect-square h-[7rem] grow overflow-hidden rounded-lg border shadow-soft"
+            className="border-muted-30 relative aspect-square h-[5rem] md:h-[7rem] grow overflow-hidden rounded-lg border shadow-soft"
           >
             <Image src={src} alt={alt} fill className="object-cover" />
           </button>

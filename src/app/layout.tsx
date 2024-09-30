@@ -19,12 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${openSans.className} antialiased`}>
-        <div className="min-h-svh bg-background space-y-4 md:space-y-8">
+        <div className="min-h-svh space-y-8 bg-background md:space-y-12">
           <Navbar />
           {children}
           <Footer />
         </div>
-        </body>
+      </body>
     </html>
   );
 }

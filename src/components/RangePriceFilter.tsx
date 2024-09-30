@@ -10,8 +10,10 @@ function RangePriceFilter() {
   const route = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const [fromPrice, setFromPrice] = useState<string>("");
-  const [toPrice, setToPrice] = useState<string>("");
+  const initFromPrice = searchParams.get('fromPrice')
+  const initToPrice = searchParams.get('toPrice')
+  const [fromPrice, setFromPrice] = useState<string>(initFromPrice ? initFromPrice: "");
+  const [toPrice, setToPrice] = useState<string>(initToPrice ? initToPrice: "");
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
@@ -20,6 +22,10 @@ function RangePriceFilter() {
     if (toPrice) newParams.set("toPrice", toPrice);
     route.replace(`${pathname}?${newParams}`);
   };
+
+  useEffect(()=>{
+
+  },[])
 
   useEffect(() => {
     // remove price params when the user empty one or the other input

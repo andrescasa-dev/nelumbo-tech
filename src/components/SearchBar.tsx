@@ -14,6 +14,8 @@ function SearchBar({ categories, className }: SearchBarProps) {
   const router = useRouter();
   const pathName = usePathname();
   const searchParams = useSearchParams();
+  const initCategory = searchParams.get('category')
+  const defaultCategory = categories.find(({value})=>initCategory && initCategory === value)?.label || "Todas las Categorías"
 
   const handleDropdownClick = (value: string) => {
     const params = new URLSearchParams(searchParams);
@@ -42,10 +44,9 @@ function SearchBar({ categories, className }: SearchBarProps) {
         itemsClassName="w-[90vw] sm:max-w-[174px] py-2.5 px-4"
         className="min-w-[194px] justify-center rounded-full bg-muted-400 px-5 py-4 text-sm text-white data-[state=open]:bg-[#EBEFF4] data-[state=open]:text-muted-500 sm:rounded-s-none"
         items={categories}
+        defaultLabel={defaultCategory}
         onValueChange={handleDropdownClick}
-      >
-        Todas las Categorías
-      </Dropdown>
+      />
     </section>
   );
 }

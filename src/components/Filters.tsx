@@ -8,7 +8,7 @@ function Filters({ brands }: { brands: Item[] }) {
   return (
     <>
       <section className="px-6">
-        <h3 className="mb-2 font-bold text-primary-500">Marcas</h3>
+        <h2 className="mb-2 font-bold text-primary-500">Marcas</h2>
         <ScrollArea className="h-[12.063rem] px-6 max-sm:overflow-y-scroll">
           <CheckBoxesFilter items={brands} paramName={"brand"} />
         </ScrollArea>
@@ -16,13 +16,13 @@ function Filters({ brands }: { brands: Item[] }) {
 
       <Separator />
       <section className="px-6">
-        <h3 className="mb-2 font-bold text-primary-500">Precio</h3>
+        <h2 className="mb-2 font-bold text-primary-500">Precio</h2>
         <RangePriceFilter />
       </section>
 
       <Separator />
       <section className="px-6">
-        <h3 className="mb-2 font-bold text-primary-500">Reviews</h3>
+        <h2 className="mb-2 font-bold text-primary-500">Reviews</h2>
         <StarRatingFilter />
       </section>
     </>
