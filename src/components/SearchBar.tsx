@@ -28,22 +28,19 @@ function SearchBar({ categories, className }: SearchBarProps) {
 
   return (
     <section
-      className={cn(
-        "xs:flex-row flex max-w-[563px] flex-col items-center rounded-full border border-muted-300 bg-white pl-5",
-        className,
-      )}
+      className={cn("flex flex-col gap-4 sm:flex-row sm:gap-0", className)}
     >
-      <div className="flex h-full grow items-center px-5 py-4">
+      <div className="flex h-full grow items-center rounded-full border border-muted-300 bg-white px-5 py-4 sm:rounded-e-none">
         <Search strokeWidth={3} className="mr-3 size-4 text-muted-400" />
         <input
-          className="inline-block h-full grow text-sm placeholder:text-muted-500 md:min-w-[20.4rem]"
+          className="inline-block h-full grow text-sm placeholder:text-muted-500"
           type="text"
           placeholder="Encuentra el producto que necesitas"
         />
       </div>
       <Dropdown
-        itemsClassName="min-w-[174px] py-2.5 px-4"
-        className="xs:rounded-s-none min-w-[194px] rounded-e-full rounded-s-full bg-muted-400 px-5 py-4 text-sm text-white data-[state=open]:bg-[#EBEFF4] data-[state=open]:text-muted-500"
+        itemsClassName=" w-[90vw] md:min-w-[174px] py-2.5 px-4"
+        className="min-w-[194px] justify-center rounded-full bg-muted-400 px-5 py-4 text-sm text-white data-[state=open]:bg-[#EBEFF4] data-[state=open]:text-muted-500 sm:rounded-s-none"
         items={categories}
         onValueChange={handleDropdownClick}
       >

@@ -9,7 +9,7 @@ import StarRating from "./StartRating";
 function ProductCard({ image, title, rate, price, quotas, discount }: Product) {
   const discountedPrice = discount ? price - price * (discount / 100) : price;
   return (
-    <article className="relative flex w-fit flex-col overflow-hidden rounded-2xl shadow-soft">
+    <article className="relative flex w-full max-w-[22rem] flex-col overflow-hidden rounded-2xl shadow-soft">
       <div className="relative flex items-center justify-center bg-gradient-to-t from-[#f3f3f3] to-white to-[2%] p-10">
         <IconButton variant="ghost" className="absolute right-2 top-2">
           <Heart aria-label="like" className="size-8" />
@@ -31,7 +31,7 @@ function ProductCard({ image, title, rate, price, quotas, discount }: Product) {
             <StarRating size="md" rate={rate} />
           </div>
           <div className="flex flex-col items-end">
-            <span className="text-[2.5rem] font-bold text-primary-200">
+            <span className="text-[2rem] font-bold text-primary-200 sm:text-[2.5rem]">
               {formatPrice(discountedPrice)}
             </span>
             {discount && (

@@ -24,7 +24,7 @@ function Dropdown({
   return (
     <DropdownMenuRadix.Root>
       <DropdownMenuRadix.Trigger asChild>
-        <button className={cn("flex gap-1 items-center group", className)}>
+        <button className={cn("group flex items-center gap-1", className)}>
           {children}
           <ChevronDown className="size-4 text-inherit group-data-[state=open]:rotate-180" />
         </button>
@@ -43,7 +43,7 @@ function Dropdown({
                 key={value}
                 value={value}
                 className={cn(
-                  "bg-white hover:bg-background text-muted-400",
+                  "bg-white text-muted-400 hover:bg-background",
                   itemsClassName,
                 )}
               >

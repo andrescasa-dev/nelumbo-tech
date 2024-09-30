@@ -20,7 +20,7 @@ function HamburgerMenu({ navigation, children }: HamburgerMenuProps) {
       <DialogContent
         title="navegación"
         description=""
-        className="md:p-4 pl-0 w-screen h-screen p-7 md:max-w-screen-xl mx-auto md:hidden bg-white"
+        className="mx-auto h-screen w-screen bg-white p-7 pl-0 md:hidden md:max-w-screen-xl md:p-4"
       >
         <ul className="flex flex-col gap-12">
           {navigation.map(({ href, isActive, label }) => (
