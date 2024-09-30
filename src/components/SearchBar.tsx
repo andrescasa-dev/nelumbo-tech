@@ -33,7 +33,7 @@ function SearchBar({ categories, className }: SearchBarProps) {
       <div className="flex h-full grow items-center rounded-full border border-muted-300 bg-white px-5 py-4 sm:rounded-e-none">
         <Search strokeWidth={3} className="mr-3 size-4 text-muted-400" />
         <input
-          className="inline-block h-full grow text-sm placeholder:text-muted-500"
+          className="inline-block h-full grow text-sm placeholder:text-muted-500 focus:outline-none"
           type="text"
           placeholder="Encuentra el producto que necesitas"
         />

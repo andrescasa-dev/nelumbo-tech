@@ -34,7 +34,7 @@ export const DialogContent = ({
         {description}
       </DialogRadix.Description>
       {children}
-      <DialogRadix.Close className="absolute right-4 top-4" aria-label="Close">
+      <DialogRadix.Close className="absolute right-4 top-4 p-2 bg-white/80 rounded-full" aria-label="Close">
         {!hideClose && <X className="size-8" />}
       </DialogRadix.Close>
     </DialogRadix.Content>
