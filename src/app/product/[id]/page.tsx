@@ -1,72 +1,16 @@
 import PaymenStimator from "@/components/PaymenStimator";
 import BasicInfoSection from "@/components/ProductDetail/BasicInfoSection";
+import { fetchOneProductSimulation } from "@/utils/utilsServer";
+
 import Image from "next/image";
 
-const productData = {
-  id: crypto.randomUUID(),
-  category: "cell-phones",
-  brand: "samsung",
-  images: [
-    {
-      src: "/Samsung-2.webp",
-      alt: "some alt",
-    },
-    {
-      src: "/Samsung-2.webp",
-      alt: "some alt",
-    },
-    {
-      src: "/Samsung-2.webp",
-      alt: "some alt",
-    },
-    {
-      src: "/Samsung-2.webp",
-      alt: "some alt",
-    },
-  ],
-  price: 2000,
-  quotas: {
-    week: 10,
-    month: 40,
-  },
-  details: [
-    { dataTitle: "Fabricante", dataValue: "Sample" },
-    { dataTitle: "Peso del producto", dataValue: "50 gr" },
-    { dataTitle: "Dimensiones", dataValue: "11 x 10 x 0.4 pulgadas" },
-    { dataTitle: "País de origen", dataValue: "China" },
-    { dataTitle: "Número de modelo", dataValue: "134687" },
-    { dataTitle: "Color", dataValue: "Plata" },
-    { dataTitle: "Material", dataValue: "Silicona plástica" },
-    { dataTitle: "Cantidad de piezas", dataValue: 4 },
-    {
-      dataTitle: "Características especiales",
-      dataValue: "Resistente al agua",
-    },
-    {
-      dataTitle: "Componentes incluidos",
-      dataValue: "Audífonos, Cargador y Manual de usuario",
-    },
-  ],
-  paymentMethods: [
-    {
-      label: "Visa",
-      value: "visa" as const,
-    },
-    {
-      label: "MasterCard",
-      value: "masterCard" as const,
-    },
-  ],
-  rate: 2,
-  discount: 40,
-  title: "Samsung Galaxy A12",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-};
+async function product({ params }: { params: { id: string } }) {
+  const productData = await fetchOneProductSimulation(params.id);
+  if(!productData){
+    return <p>Parece que este producto no existe, intenta con otro!</p>
+  }
 
-function product({ params }: { params: { id: string } }) {
-  console.log(params);
-  const {
+  const{
     title,
     rate,
     discount,
@@ -75,10 +19,10 @@ function product({ params }: { params: { id: string } }) {
     paymentMethods,
     images,
     details,
-  } = productData;
+    } = productData
+
   return (
-    <div className="bg-background">
-      <main className="px-main-layout mx-auto flex max-w-screen-xl flex-col gap-10">
+    <main className="px-main-layout mx-auto flex max-w-screen-xl flex-col gap-10">
         <BasicInfoSection
           images={images}
           paymentMethods={paymentMethods}
@@ -131,7 +75,6 @@ function product({ params }: { params: { id: string } }) {
           </div>
         </section>
       </main>
-    </div>
   );
 }
 

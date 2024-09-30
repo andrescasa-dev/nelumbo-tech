@@ -19,6 +19,7 @@ interface ProductDialogProps {
   cartItems: number;
   totalToPay: number;
   quotas: Quotas;
+  id: string
 }
 
 function ProductDialog({
@@ -29,6 +30,7 @@ function ProductDialog({
   cartItems,
   totalToPay,
   quotas,
+  id
 }: ProductDialogProps) {
   const { src, alt } = image;
 
@@ -108,7 +110,7 @@ function ProductDialog({
             </span>
           </p>
           <Link
-            href={"#"}
+            href={`product/${id}`}
             className={cn(
               buttonVariants({ variant: "primary", size: "mid" }),
               "uppercase",

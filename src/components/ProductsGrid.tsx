@@ -1,4 +1,4 @@
-import { fetchSimulation, paramsToUrlParams } from "@/utils/utilsServer";
+import { fetchProductsSimulation, paramsToUrlParams } from "@/utils/utilsServer";
 import ProductCard from "./ProductCard";
 import { Glasses } from "lucide-react";
 
@@ -8,7 +8,7 @@ interface ProductsGridProps {
 
 async function ProductsGrid({ searchParams = {} }: ProductsGridProps) {
   const params = paramsToUrlParams(searchParams);
-  const products = await fetchSimulation(`/?${params}`);
+  const products = await fetchProductsSimulation(`/?${params}`);
 
   return (
     <section className="min-h-[85svh]">

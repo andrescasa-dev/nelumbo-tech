@@ -1,5 +1,6 @@
 import "server-only";
-import { products } from "@/data";
+import { products, productsFullData } from "@/data";
+import { resolve } from "path";
 
 export const paramsToUrlParams = (searchParams: SearchParamsProps) => {
   const params = new URLSearchParams();
@@ -15,7 +16,7 @@ export const paramsToUrlParams = (searchParams: SearchParamsProps) => {
   return params;
 };
 
-export const fetchSimulation = async (endPoint: string) => {
+export const fetchProductsSimulation = async (endPoint: string) => {
   const url = new URL(endPoint, process.env.BAKEND_URL);
   const selectedBrands = url.searchParams.getAll("brand");
   const fromPrice = url.searchParams.get("fromPrice");
@@ -50,3 +51,12 @@ export const fetchSimulation = async (endPoint: string) => {
     }, 300);
   });
 };
+
+export const fetchOneProductSimulation = (targetId: string)=>{
+  return new Promise<ProductFullData | undefined>((resolve)=>{
+    setTimeout(()=>{
+      const item = productsFullData.find(({id})=> targetId === id)
+      resolve(item)
+    }, 300)
+  })
+}

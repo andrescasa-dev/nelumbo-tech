@@ -15,7 +15,7 @@ interface BasicInfoSectionProps {
   rate: number;
   title: string;
   description: string;
-  discount: number;
+  discount: Discount;
   paymentMethods: PaymentMethod[];
 }
 

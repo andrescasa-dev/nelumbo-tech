@@ -19,7 +19,7 @@ const navigation = [
 
 function Navbar() {
   return (
-    <header className="mb-4 md:mb-8">
+    <header className="">
       <nav className="shadow-[0px_5px_6px_#00000029]">
         <div className="bg-gradient-to-b from-primary-200 to-primary-300 px-4 py-5">
           <div className="mx-auto flex max-w-screen-xl items-center justify-between">
@@ -28,7 +28,7 @@ function Navbar() {
                 <Menu className="size-6 md:size-8" />
               </IconButton>
             </HamburgerMenu>
-            <Link href="#" aria-label="Logo de macro pay">
+            <Link href="/" aria-label="Logo de macro pay">
               <Logo className="w-[150px] md:w-auto" />
             </Link>
             <div className="flex items-center gap-2">

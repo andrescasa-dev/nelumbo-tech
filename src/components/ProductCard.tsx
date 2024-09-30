@@ -5,7 +5,7 @@ import ProductDialog from "./ProductDialog";
 import ProductPreview from "./ProductPreview";
 import StarRating from "./StartRating";
 
-function ProductCard({ image, title, rate, price, quotas, discount }: Product) {
+function ProductCard({ image, title, rate, price, quotas, discount, id }: Product) {
   return (
     <article className="relative flex w-full max-w-[22rem] flex-col overflow-hidden rounded-2xl shadow-soft">
       <ProductPreview
@@ -30,6 +30,7 @@ function ProductCard({ image, title, rate, price, quotas, discount }: Product) {
             <span> o {formatPrice(quotas.month)} p/mes</span>
           </p>
           <ProductDialog
+            id={id}
             image={image}
             title={title}
             price={price}
