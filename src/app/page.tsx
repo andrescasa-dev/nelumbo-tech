@@ -1,5 +1,6 @@
 import FilterDialog from "@/components/FilterDialog";
 import Filters from "@/components/Filters";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import ProductCardSklt from "@/components/ProductCardSklt";
 import ProductsGrid from "@/components/ProductsGrid";
@@ -25,6 +26,7 @@ export default function Home({ searchParams }: HomeProps) {
           <ProductsGrid searchParams={searchParams} />
         </Suspense>
       </main>
+      <Footer />
     </div>
   );
 }
