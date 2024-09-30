@@ -1,11 +1,13 @@
-import Button from "@/components/Button";
+import { buttonVariants } from "@/components/Button";
 import Price from "@/components/Price";
 import ProductCarousel from "@/components/ProductCarousel";
 import SeeMoreText from "@/components/SeeMoreText";
 import StarRating from "@/components/StartRating";
+import { cn } from "@/utils/utilsClient";
 import { ArrowRight } from "lucide-react";
-import Visa from "../icons/Visa";
+import Link from "next/link";
 import MasterCard from "../icons/MasterCard";
+import Visa from "../icons/Visa";
 
 interface BasicInfoSectionProps {
   images: ImageProps[];
@@ -60,16 +62,18 @@ function BasicInfoSection({
           </div>
         </div>
         <SeeMoreText>{description}</SeeMoreText>
-        <Button
-          size="mid"
-          variant="primary"
-          className="mt-auto max-w-[21rem] justify-between self-end uppercase"
+        <Link
+          href="#"
+          className={cn(
+            buttonVariants({ variant: "primary", size: "mid" }),
+            "mt-auto max-w-[21rem] justify-between self-end uppercase",
+          )}
         >
           Lo quiero a crédito
           <div className="rounded-full bg-primary-200 p-1">
             <ArrowRight className="size-6 text-secondary-400" strokeWidth={4} />
           </div>
-        </Button>
+        </Link>
       </section>
     </section>
   );

@@ -35,3 +35,8 @@ interface PaymentMethod {
   label: string;
   value: "visa" | "masterCard";
 }
+
+interface DataItem {
+  dataTitle: string;
+  dataValue: string | number;
+}
