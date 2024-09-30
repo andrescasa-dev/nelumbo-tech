@@ -1,3 +1,5 @@
+"use client";
+
 import { cn, formatPrice } from "@/utils/utilsClient";
 import { Check } from "lucide-react";
 import Image from "next/image";
