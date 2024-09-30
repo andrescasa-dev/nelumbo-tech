@@ -22,7 +22,7 @@ function HamburgerMenu({ navigation, children }: HamburgerMenuProps) {
         description=""
         className="mx-auto h-screen w-screen bg-white p-7 pl-0 md:hidden md:max-w-screen-xl md:p-4"
       >
-        <ul className="flex flex-col gap-12">
+        <ul className="flex flex-col gap-12 p-12">
           {navigation.map(({ href, isActive, label }) => (
             <li key={label}>
               <NavLink href={href} isActive={isActive}>

@@ -18,7 +18,7 @@ function StarRatingFilter() {
     const params = new URLSearchParams(searchParams);
     if (rating !== 0) {
       params.set("rating", String(rating));
-      route.push(`${pathName}?${params}`);
+      route.push(`${pathName}?${params}`, { scroll: false });
     } else {
       const willRedirect = params.has("rating");
       params.delete("rating");
