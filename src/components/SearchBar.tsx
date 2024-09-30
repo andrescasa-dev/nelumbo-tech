@@ -14,8 +14,10 @@ function SearchBar({ categories, className }: SearchBarProps) {
   const router = useRouter();
   const pathName = usePathname();
   const searchParams = useSearchParams();
-  const initCategory = searchParams.get('category')
-  const defaultCategory = categories.find(({value})=>initCategory && initCategory === value)?.label || "Todas las Categorías"
+  const initCategory = searchParams.get("category");
+  const defaultCategory =
+    categories.find(({ value }) => initCategory && initCategory === value)
+      ?.label || "Todas las Categorías";
 
   const handleDropdownClick = (value: string) => {
     const params = new URLSearchParams(searchParams);

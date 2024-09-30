@@ -1,4 +1,3 @@
-
 type Item = {
   label: string;
   value: string;
@@ -10,8 +9,8 @@ interface ImageProps {
 }
 
 interface Quotas {
-  week: number; 
-  month: number; 
+  week: number;
+  month: number;
 }
 
 type Discount = number | undefined;
@@ -23,9 +22,8 @@ interface DataItem {
 
 interface PaymentMethod {
   label: string;
-  value: "visa" | "masterCard"; 
+  value: "visa" | "masterCard";
 }
-
 
 interface Product {
   brand: string;
@@ -33,28 +31,25 @@ interface Product {
   id: string;
   image: ImageProps;
   title: string;
-  rate: number; 
+  rate: number;
   price: number;
   quotas: Quotas;
-  discount: Discount; 
+  discount: Discount;
 }
-
 
 interface ProductFullData {
   id: string;
-  images: ImageProps[]; 
+  images: ImageProps[];
   price: number;
   quotas: Quotas;
-  details: DataItem[]; 
-  paymentMethods: PaymentMethod[]; 
+  details: DataItem[];
+  paymentMethods: PaymentMethod[];
   rate: number;
   discount: Discount;
   title: string;
-  description: string; 
+  description: string;
 }
-
 
 interface SearchParamsProps {
   [key: string]: string | string[] | undefined;
 }
-

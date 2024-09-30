@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { cn, formatPrice } from "@/utils/utilsClient";
 import Link from "next/link";
@@ -7,13 +7,24 @@ import { buttonVariants } from "./Button";
 import HappyFace from "./icons/HappyFace";
 import Slider from "./Slider";
 
-function PaymenStimator({price, className}: {price: number, className: string}) {
-  const [percentage, setPercentage] = useState(15)
-  const firstPay = Math.round(price * percentage / 100); //in percentage
+function PaymenStimator({
+  price,
+  className,
+}: {
+  price: number;
+  className: string;
+}) {
+  const [percentage, setPercentage] = useState(15);
+  const firstPay = Math.round((price * percentage) / 100); //in percentage
   const weeklyPayments = Math.round(price / 24);
 
   return (
-    <article className={cn("flex max-w-[23.438rem] flex-col gap-2 gap-y-6 rounded-xl bg-white px-10 py-12 text-foreground-400 shadow-soft", className)}>
+    <article
+      className={cn(
+        "flex max-w-[23.438rem] flex-col gap-2 gap-y-6 rounded-xl bg-white px-10 py-12 text-foreground-400 shadow-soft",
+        className,
+      )}
+    >
       <header className="flex flex-col items-center gap-2">
         <HappyFace className="size-20 fill-primary-200" />
         <h2 className="text-2xl font-bold">¿Te falta una lanita?</h2>
@@ -30,12 +41,9 @@ function PaymenStimator({price, className}: {price: number, className: string}) 
 
         <div>
           <Slider value={percentage} onValueChange={setPercentage} />
-        
 
-        <p className="mt-2">Enganche</p>
+          <p className="mt-2">Enganche</p>
         </div>
-
-        
       </div>
       <footer>
         <Link
@@ -47,7 +55,9 @@ function PaymenStimator({price, className}: {price: number, className: string}) 
         >
           Aplicar Ahora
         </Link>
-        <p className="text-xs text-[#B4B4B4] mt-1">*Hasta $2,000 de manera fácil, rápida y confiable</p>
+        <p className="mt-1 text-xs text-[#B4B4B4]">
+          *Hasta $2,000 de manera fácil, rápida y confiable
+        </p>
       </footer>
     </article>
   );

@@ -19,7 +19,7 @@ interface ProductDialogProps {
   cartItems: number;
   totalToPay: number;
   quotas: Quotas;
-  id: string
+  id: string;
 }
 
 function ProductDialog({
@@ -30,7 +30,7 @@ function ProductDialog({
   cartItems,
   totalToPay,
   quotas,
-  id
+  id,
 }: ProductDialogProps) {
   const { src, alt } = image;
 
@@ -42,7 +42,7 @@ function ProductDialog({
         description="Conoce detalles sobre este producto"
         className="h-[90vsh] w-[95vw] md:h-auto md:w-auto"
       >
-        <div className="relative hidden md:block md:h-[20.961rem] w-full">
+        <div className="relative hidden w-full md:block md:h-[20.961rem]">
           <Image
             quality={30}
             aria-hidden={true}
@@ -55,10 +55,10 @@ function ProductDialog({
         </div>
         <section className="flex gap-1 px-11 py-7">
           <h2 className="sr-only">Descripción del producto</h2>
-          <div className="relative aspect-square w-[162px] border-l border-muted-300 hidden md:block">
+          <div className="relative hidden aspect-square w-[162px] border-l border-muted-300 md:block">
             <Image
               fill
-              className="object-contain "
+              className="object-contain"
               sizes="(max-width: 768px) 20vw, (max-width: 1200px) 20vw, 20vw"
               src={src}
               alt={alt}
@@ -67,7 +67,7 @@ function ProductDialog({
 
           <dl className="flex grow flex-col gap-1.5">
             <dt className="sr-only">precio</dt>
-            <dd className="self-end text-lg font-semibold text-primary-200 hidden md:block">
+            <dd className="hidden self-end text-lg font-semibold text-primary-200 md:block">
               {formatPrice(price, 2)} x 1
             </dd>
             <dt className="sr-only">nombre del producto</dt>
@@ -103,9 +103,9 @@ function ProductDialog({
               className="size-9 text-primary-200"
             />
           </div>
-          <p className="-mt-3 flex flex-col items-center text-lg text-center md:text-xl font-semibold text-foreground-400">
+          <p className="-mt-3 flex flex-col items-center text-center text-lg font-semibold text-foreground-400 md:text-xl">
             Te vas a llevar este celular por solo
-            <span className="text-2xl md:text-3xl font-bold">
+            <span className="text-2xl font-bold md:text-3xl">
               {formatPrice(quotas.week)} p&#x2f;semana!
             </span>
           </p>
@@ -113,7 +113,7 @@ function ProductDialog({
             href={`product/${id}`}
             className={cn(
               buttonVariants({ variant: "primary", size: "mid" }),
-              "uppercase text-lg",
+              "text-lg uppercase",
             )}
           >
             Comprar a cr&eacute;dito

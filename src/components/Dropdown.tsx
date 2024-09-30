@@ -10,7 +10,7 @@ interface DropdownProps {
   className?: string;
   itemsClassName?: string;
   onValueChange?: (value: string) => void;
-  defaultLabel: string
+  defaultLabel: string;
 }
 
 function Dropdown({
@@ -20,8 +20,10 @@ function Dropdown({
   itemsClassName,
   onValueChange,
 }: DropdownProps) {
-  const [selectedValue, setSelectedValue] = useState<string | undefined>(undefined);
-  const selectedItem = items.find(({value})=>value === selectedValue)
+  const [selectedValue, setSelectedValue] = useState<string | undefined>(
+    undefined,
+  );
+  const selectedItem = items.find(({ value }) => value === selectedValue);
   return (
     <DropdownMenuRadix.Root>
       <DropdownMenuRadix.Trigger asChild>
@@ -31,7 +33,10 @@ function Dropdown({
         </button>
       </DropdownMenuRadix.Trigger>
       <DropdownMenuRadix.Portal>
-        <DropdownMenuRadix.Content align="start" className={"shadow-soft select-none"}>
+        <DropdownMenuRadix.Content
+          align="start"
+          className={"select-none shadow-soft"}
+        >
           <DropdownMenuRadix.RadioGroup
             value={selectedValue}
             onValueChange={(value) => {

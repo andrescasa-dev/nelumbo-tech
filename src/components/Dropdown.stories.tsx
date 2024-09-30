@@ -16,7 +16,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: "Todas las Categorías",
     itemsClassName: "min-w-[174px] py-2.5 px-4",
     className:
       "min-w-[194px] bg-muted-400 py-3 px-5 text-white text-sm data-[state=open]:bg-[#EBEFF4] data-[state=open]:text-muted-500",
@@ -25,5 +24,6 @@ export const Default: Story = {
       { label: "Celulares", value: "mobiles" },
       { label: "Tablets", value: "tablets" },
     ],
+    defaultLabel: "todas las cetegorias",
   },
 };

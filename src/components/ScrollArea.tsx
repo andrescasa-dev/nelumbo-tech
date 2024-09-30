@@ -18,7 +18,7 @@ const thumbClasses = cn(
 function ScrollArea({ children, className }: ScrollAreaProps) {
   return (
     <ScrollAreaRadix.Root className={cn("overflow-hidden", className)}>
-      <ScrollAreaRadix.Viewport className="w-full h-full">
+      <ScrollAreaRadix.Viewport className="h-full w-full">
         {children}
       </ScrollAreaRadix.Viewport>
 
@@ -35,7 +35,7 @@ function ScrollArea({ children, className }: ScrollAreaProps) {
         orientation="horizontal"
         className={cn(
           scrollbarClasses,
-          "data-[orientation=horizontal]:flex-col data-[orientation=horizontal]:h-2.5",
+          "data-[orientation=horizontal]:h-2.5 data-[orientation=horizontal]:flex-col",
         )}
       >
         <ScrollAreaRadix.Thumb className={thumbClasses} />

@@ -9,7 +9,7 @@ function InputField({ className, ...delegate }: InputFieldProps) {
   return (
     <input
       className={cn(
-        "border border-[#B4B4B4] placeholder:text-[#B4B4B4] p-3 text-neutral-600 rounded-md",
+        "rounded-md border border-[#B4B4B4] p-3 text-neutral-600 placeholder:text-[#B4B4B4]",
         className,
       )}
       type="text"
