@@ -34,7 +34,7 @@ function CheckBoxesFilter({ items, paramName }: CheckBoxesFilterProps) {
   return (
     <ul className="flex flex-col gap-1">
       {items.map(({ label, value }) => (
-        <li key={value} className="flex gap-2.5 items-center">
+        <li key={value} className="flex items-center gap-2.5">
           <Checkbox
             checked={handleChecked(value)}
             onCheckedChange={(isChecked) => handleChecking(value, isChecked)}

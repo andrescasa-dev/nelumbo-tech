@@ -40,20 +40,20 @@ function ProductDialog({
         description="Conoce detalles sobre este producto"
         hideClose
       >
-        <div className="relative w-full h-[20.961rem]">
+        <div className="relative h-[20.961rem] w-full">
           <Image
             quality={30}
             aria-hidden={true}
             src="/happyPeople.webp"
             alt="Usuario feliz con un producto de MacroPay"
             fill
-            className="object-cover bg-gray-300"
+            className="bg-gray-300 object-cover"
             sizes="(max-width: 768px) 20vw, (max-width: 1200px) 20vw, 20vw"
           />
         </div>
-        <section className="flex py-7 px-11 gap-1">
+        <section className="flex gap-1 px-11 py-7">
           <h2 className="sr-only">Descripción del producto</h2>
-          <div className="aspect-square w-[162px] relative border-l border-muted-300 ">
+          <div className="relative aspect-square w-[162px] border-l border-muted-300">
             <Image
               fill
               className="object-contain"
@@ -63,47 +63,47 @@ function ProductDialog({
             />
           </div>
 
-          <dl className="flex flex-col grow gap-1.5">
+          <dl className="flex grow flex-col gap-1.5">
             <dt className="sr-only">precio</dt>
-            <dd className="self-end text-primary-200 font-semibold text-lg">
+            <dd className="self-end text-lg font-semibold text-primary-200">
               {formatPrice(price, 2)} x 1
             </dd>
             <dt className="sr-only">nombre del producto</dt>
-            <dd className="text-foreground-400 font-bold text-xl capitalize max-w-[14.438rem]">
+            <dd className="max-w-[14.438rem] text-xl font-bold capitalize text-foreground-400">
               {title}
             </dd>
-            <div className="flex text-muted-400 text-lg gap-1">
+            <div className="flex gap-1 text-lg text-muted-400">
               <dt>Color seleccionado:</dt>
               <dd className="font-bold">Gris Ratón</dd>
             </div>
           </dl>
         </section>
         <Separator />
-        <section className="flex justify-between py-6 px-11 font-semibold text-lg">
+        <section className="flex justify-between px-11 py-6 text-lg font-semibold">
           <h2 className="sr-only">Carrito de compras</h2>
           <p className="flex text-muted-400">
             {cartItems} ítem(s) en tu carrito
           </p>
-          <p className="text-lg flex gap-2">
-            <span className="flex text-muted-400 ">Subtotal:</span>
-            <span className="text-primary-200 ">
+          <p className="flex gap-2 text-lg">
+            <span className="flex text-muted-400">Subtotal:</span>
+            <span className="text-primary-200">
               {formatPrice(totalToPay, 2)}
             </span>
           </p>
         </section>
         <Separator />
-        <section className="pt-7 pb-10 px-11 flex flex-col gap-5 justify-center items-center">
+        <section className="flex flex-col items-center justify-center gap-5 px-11 pb-10 pt-7">
           <h2 className="sr-only">Pedir Producto</h2>
-          <div className="p-[1.625rem] shadow-soft rounded-full relative before:absolute before:content-[''] before:inset-2 before:rounded-full before:border before:border-secondary-400">
+          <div className="relative rounded-full p-[1.625rem] shadow-soft before:absolute before:inset-2 before:rounded-full before:border before:border-secondary-400 before:content-['']">
             <Check
               aria-hidden={true}
               strokeWidth={5}
               className="size-9 text-primary-200"
             />
           </div>
-          <p className="text-foreground-400 font-semibold text-xl flex flex-col items-center -mt-3">
+          <p className="-mt-3 flex flex-col items-center text-xl font-semibold text-foreground-400">
             Te vas a llevar este celular por solo
-            <span className="font-bold text-3xl">
+            <span className="text-3xl font-bold">
               {formatPrice(quotas.week)} p&#x2f;semana!
             </span>
           </p>
@@ -111,18 +111,18 @@ function ProductDialog({
             href={"#"}
             className={cn(
               buttonVariants({ variant: "primary", size: "mid" }),
-              "uppercase ",
+              "uppercase",
             )}
           >
             Comprar a cr&eacute;dito
           </Link>
-          <p className="flex flex-col gap-1 items-center">
-            <span className="text-sm text-muted-400 italic bg-white px-8 relative before:absolute before:-z-10 before:content-[''] before:w-[200%] before:-translate-x-1/2 before:left-1/2  before:top-1/2 before:h-px before:bg-muted-300">
+          <p className="flex flex-col items-center gap-1">
+            <span className="relative bg-white px-8 text-sm italic text-muted-400 before:absolute before:left-1/2 before:top-1/2 before:-z-10 before:h-px before:w-[200%] before:-translate-x-1/2 before:bg-muted-300 before:content-['']">
               o puedes
             </span>
             <Link
               href={"#"}
-              className="text-primary-200 font-semibold hover:text-black"
+              className="font-semibold text-primary-200 hover:text-black"
             >
               Comprar a contado
             </Link>

@@ -20,7 +20,7 @@ export const DialogContent = ({
   ...delegate
 }: DialogContentProps) => (
   <DialogRadix.Portal>
-    <DialogRadix.Overlay className="fixed inset-0 bg-[#4B566B] opacity-70" />
+    <DialogRadix.Overlay className="fixed inset-0 bg-muted-500/75" />
     <DialogRadix.Content
       aria-describedby={undefined}
       className={cn(

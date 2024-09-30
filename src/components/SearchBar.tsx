@@ -39,7 +39,7 @@ function SearchBar({ categories, className }: SearchBarProps) {
         />
       </div>
       <Dropdown
-        itemsClassName=" w-[90vw] md:min-w-[174px] py-2.5 px-4"
+        itemsClassName="w-[90vw] sm:max-w-[174px] py-2.5 px-4"
         className="min-w-[194px] justify-center rounded-full bg-muted-400 px-5 py-4 text-sm text-white data-[state=open]:bg-[#EBEFF4] data-[state=open]:text-muted-500 sm:rounded-s-none"
         items={categories}
         onValueChange={handleDropdownClick}
