@@ -17,5 +17,5 @@ abrir [http://localhost:3000](http://localhost:3000) para ver los resultados
 - Pequeña documentación de los componentes primitivos
 
 ## aclaraciones
-- 
+- Por temas de agilidad solo agregué dos detalles de producto, para el primer celular y la primera tablet
 - En ocasiones hay un error de hidratación, la pagina no es interactuable se soluciona recargando

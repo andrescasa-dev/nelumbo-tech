@@ -258,6 +258,23 @@ export const products: Product[] = [
     rate: 3,
     discount: 18,
   },
+  {
+    id: "g1h2i3j4-4444-9101-1121-314151617181",
+    title: "Samsung Galaxy Tab A7",
+    category: "tablets",
+    brand: "samsung",
+    image: {
+      alt: "Samsung Galaxy Tab A7",
+      src: "/tablet1.webp",
+    },
+    price: 3200,
+    quotas: {
+      week: 8,
+      month: 32,
+    },
+    rate: 3,
+    discount: 18,
+  },
 ];
 
 export const categories = [
