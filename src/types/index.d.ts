@@ -13,6 +13,8 @@ interface Quotas {
   month: number; // amount
 }
 
+type Discount = number | undefined;
+
 interface Product {
   brand: string;
   category: "cell-phones" | "tablets";
@@ -22,9 +24,14 @@ interface Product {
   rate: number; // from 0 to 5
   price: number;
   quotas: Quotas;
-  discount?: number; // percentage
+  discount: Discount; // percentage
 }
 
 interface SearchParamsProps {
   [key: string]: string | string[] | undefined;
+}
+
+interface PaymentMethod {
+  label: string;
+  value: "visa" | "masterCard";
 }

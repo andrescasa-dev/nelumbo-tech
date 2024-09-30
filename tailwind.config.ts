@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      padding: {
+        "main-layout": "1rem",
+      },
       colors: {
         background: "#EBEFF4",
         primary: {

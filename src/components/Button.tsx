@@ -2,7 +2,7 @@ import { cn } from "@/utils/utilsClient";
 import { cva, VariantProps } from "class-variance-authority";
 import React, { ReactNode } from "react";
 
-export const buttonVariants = cva("flex gap-2", {
+export const buttonVariants = cva("flex gap-2 items-center", {
   variants: {
     variant: {
       primary:
@@ -20,7 +20,7 @@ export const buttonVariants = cva("flex gap-2", {
     },
     size: {
       big: "px-7 py-6",
-      mid: "py-5 px-11",
+      mid: "py-5 px-7",
       small: "px-5 py-2.5  font-semibold",
     },
   },

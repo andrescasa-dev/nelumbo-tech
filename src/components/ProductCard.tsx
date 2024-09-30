@@ -1,27 +1,19 @@
 import { formatPrice } from "@/utils/utilsClient";
-import { Heart } from "lucide-react";
-import Image from "next/image";
 import Button from "./Button";
-import IconButton from "./IconButton";
+import Price from "./Price";
 import ProductDialog from "./ProductDialog";
+import ProductPreview from "./ProductPreview";
 import StarRating from "./StartRating";
 
 function ProductCard({ image, title, rate, price, quotas, discount }: Product) {
-  const discountedPrice = discount ? price - price * (discount / 100) : price;
   return (
     <article className="relative flex w-full max-w-[22rem] flex-col overflow-hidden rounded-2xl shadow-soft">
-      <div className="relative flex items-center justify-center bg-gradient-to-t from-[#f3f3f3] to-white to-[2%] p-10">
-        <IconButton variant="ghost" className="absolute right-2 top-2">
-          <Heart aria-label="like" className="size-8" />
-        </IconButton>
-        <Image width={244} height={333} alt={image.alt} src={image.src} />
-        {discount && (
-          <span className="absolute bottom-2 left-3.5 flex aspect-square items-center justify-center rounded-full bg-accent-400 p-2 text-center text-4xl font-bold text-white">
-            <span className="sr-only">descuento de:</span>
-            {discount}%
-          </span>
-        )}
-      </div>
+      <ProductPreview
+        width={244}
+        height={333}
+        image={image}
+        discount={discount}
+      />
       <section className="flex grow flex-col gap-3 bg-white px-6 py-5">
         <div className="flex justify-between">
           <div className="flex flex-col">
@@ -30,17 +22,7 @@ function ProductCard({ image, title, rate, price, quotas, discount }: Product) {
             </h2>
             <StarRating size="md" rate={rate} />
           </div>
-          <div className="flex flex-col items-end">
-            <span className="text-[2rem] font-bold text-primary-200 sm:text-[2.5rem]">
-              {formatPrice(discountedPrice)}
-            </span>
-            {discount && (
-              <span className="-mt-2 text-xl font-semibold text-muted-400 line-through">
-                <span className="sr-only">precio sin descuento: </span>
-                {formatPrice(price)}
-              </span>
-            )}
-          </div>
+          <Price discount={discount} price={price} />
         </div>
         <div className="mt-auto flex justify-between">
           <p className="flex flex-col text-sm text-muted-400">
